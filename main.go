@@ -102,7 +102,7 @@ func main() {
             fmt.Println(string(buf[:n]))
         case temp = <-co2mini.TempCh:
             now := time.Now().Unix()
-            resp, err := graphite.Send("co2mini.co2", 1, float64(temp), now)
+            resp, err := graphite.Send("co2mini.", 1, float64(temp), now)
             if err != nil {
                 panic(err)
             }
